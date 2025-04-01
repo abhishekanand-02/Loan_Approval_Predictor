@@ -1,2 +1,9 @@
 lpenv/
-data/
+logs/
+artifacts/
+mlruns/
+schema/
+src/__pycache__/
+src/components/__pycache__/
+src/pipelines/__pycache__/
+src/utils/__pycache__/
