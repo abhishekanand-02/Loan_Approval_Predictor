@@ -1,7 +1,0 @@
-[core]
-    remote = origin
-['remote "dagshub"']
-    url = https://dagshub.com/abhishekanand-02/Loan_Approval_Dataset.git
-['remote "origin"']
-    url = https://dagshub.com/abhishekanand-02/Loan_Approval_Dataset
-    auth = basic
