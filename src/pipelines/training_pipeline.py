@@ -182,7 +182,7 @@ class ModelEvaluationTask(luigi.Task):
 
 
 if __name__ == "__main__":
-    luigi.build([ModelEvaluationTask()],workers = 1, local_scheduler=False)
+    luigi.build([ModelEvaluationTask()],workers = 4, local_scheduler=True)
 
 
 
