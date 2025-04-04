@@ -1,20 +1,21 @@
 # Bank Loan Approval Predictor App
 
-![Loan Prediction Model](images/image.png)
-
+![Loan Prediction Model](images/image1.png)
+---
 ## 📌 Problem Statement:
 Predict whether a loan applicant will get loan approval (Yes or No) based on various financial and personal details such as income, credit history, employment status, etc.
 
-## Approach:
+---
+## 🚀 Approach:
 To solve this problem, I used the **Random Forest Classifier** algorithm. For a detailed analysis and intuition behind using this algorithm, please watch the video that explains the problem statement and the rationale for selecting this algorithm.
 
-### Video 1: Describes the Problem Statement and Algorithm  
+### 🎥 Video 1: Describes the Problem Statement and Algorithm  
 [Watch Video 1](https://www.loom.com/share/eb1b90fd450a492bac0f5e7929df10c4?sid=2bf2c5df-287b-48d4-b8db-5b3f58eac22d)
 
-### Video 2: Covers All Components of the Training Pipeline  
+### 🎥 Video 2: Covers All Components of the Training Pipeline  
 [Watch Video 2](https://www.loom.com/share/da89519206d34bb6abe9d28e86b16622?sid=28869b58-7235-4627-b2d0-87203af78058)
 
-
+---
 ## 📝 Dataset Details:
 The dataset contains information like:
 
@@ -32,10 +33,31 @@ The dataset contains information like:
 - Property_Area – Urban/Rural/Semi-Urban
 - Loan_Status – Target Variable (Y/N) (Loan Approved or Not)
 
+
+## 🛠️ ML Tools & Technologies Used:
+
+### 🐳 Docker
+- **Used to create containers and push them to DockerHub.** Docker allows you to package your application and its dependencies into a container, ensuring consistency across different environments.
+
+### 🗂️ DVC (Data Version Control)
+- **Used for versioning datasets and models.** DVC helps manage large files, track changes, and facilitate collaboration between teams when working with data and machine learning models.
+
+### 📊 MLflow
+- **Used for managing the machine learning lifecycle.** MLflow is used for tracking experiments, packaging code into reproducible runs, and managing model deployment.
+
+### 🌐 Dagshub
+- **Used for managing and versioning data science projects.** Dagshub integrates DVC and Git to manage datasets, code, and models, helping teams collaborate efficiently on machine learning projects.
+
+### 🔄 Luigi
+- **Used for building complex pipelines.** Luigi helps automate the execution of workflows, ensuring reproducibility and scalability of tasks such as data preprocessing, model training, and evaluation.
+
+<!-- --- -->
+
+
 ## Instructions to Run the Loan Approval Model App
 There are two ways to run the loan approval prediction app. Follow one of the methods below:
 
-### Method 1: Git Clone & Run Locally
+### 🖥️ Method 1: Git Clone & Run Locally
 1. Clone the Git repository:
 - First, clone the repository containing the code.
 ```bash
@@ -77,7 +99,7 @@ python app.py
 ```
 - The app will now be running at http://localhost:5000
 
-### Method 2: Using Docker
+### 🚀 Method 2: Using Docker
 - If you prefer to run the app using Docker, follow these steps:
 
 1. Install Docker if it is not pre-installed:
@@ -113,5 +135,36 @@ sudo docker ps -a
 sudo docker stop <container-id>
 sudo docker rm <container-id>
 ```
+
+
+### 🖼️ Visuals:
+
+![Loan Prediction Model](images/image2.png)
+![Loan Prediction Model](images/image3.png)
+
+
+## 🔮 Future Scope:
+
+While the current model uses the Random Forest Classifier to predict loan approvals, there are several areas where improvements can be made in the future:
+
+1. **Model Enhancement:**
+   - Explore other machine learning models such as **Gradient Boosting Machines (GBM)**, **XGBoost**, or **Neural Networks** for potentially better performance.
+   - Implement **Hyperparameter Tuning** techniques like **Grid Search** or **Random Search** to optimize model performance.
+
+2. **Data Sources:**
+   - Integrate more diverse datasets that include additional features, such as geographic information, social media activity, or transaction history, to provide a more comprehensive model.
+   - Incorporate **real-time data** to make the prediction process more dynamic and accurate.
+
+3. **Monitoring:**
+   - Use **Model Monitoring** tools to track performance and retrain the model when the data distribution shifts over time (concept drift).
+
+
+---
+
+## 👨‍💻 Developer:
+This project was developed by Abhishek Anand.
+
+Feel free to reach out at bgsabhishekanand02@gmail.com if you have any questions or suggestions!
+
 
 
