@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <style>
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Light background color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Allow footer to be at the bottom */
+            height: 100vh; /* Take full height */
+            color: #6a1f1f;
+            text-align: center;
+        }
+
+        /* Heading Styling */
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue color */
+        }
+
+        /* Paragraph Styling - Changed color to white */
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: black; /* Set paragraph text color to white */
+        }
+
+        /* Link Styling */
+        a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #f1f1f1;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Container Styling */
+        .container {
+            width: 80%;
+            max-width: 600px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333; 
+            color: white;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Loan Approval Prediction</h1>
+        <p>Prediction Result: {{ prediction }}</p>
+        <a href="/">Go back to Home</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>All Rights Reserved &copy; 2025 | Loan Approval Prediction WebApp</p>
+    </footer>
+</body>
+</html>
