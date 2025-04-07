@@ -34,7 +34,7 @@ The dataset contains information like:
 - Loan_Status – Target Variable (Y/N) (Loan Approved or Not)
 
 
-## 🛠️ ML Tools & Technologies Used:
+## 🛠️ ML Tools & Technologies Used for This Project:
 
 ### 🐳 Docker
 - **Used to create containers and push them to DockerHub.** Docker allows you to package your application and its dependencies into a container, ensuring consistency across different environments.
@@ -42,14 +42,78 @@ The dataset contains information like:
 ### 🗂️ DVC (Data Version Control)
 - **Used for versioning datasets and models.** DVC helps manage large files, track changes, and facilitate collaboration between teams when working with data and machine learning models.
 
+> ⚡ **Note:** To track the dataset with DVC and push it to Dagshub, follow these steps:
+> 
+> 1. Initialize DVC in your project directory:
+>    ```bash
+>    dvc init
+>    ```
+> 
+> 2. Add your dataset to DVC (replace `data\1\Loan_data_set.csv` with the address of your dataset):
+>    ```bash
+>    dvc add data\1\Loan_data_set.csv
+>    ```
+> 
+> 3. Commit the changes to Git (the DVC metadata will be saved in Git):
+>    ```bash
+>    git add . 
+>    git commit -m "Add dataset to DVC"
+>    ```
+> 
+> 4. Create a repository on Dagshub (replace `<YOUR_DAGSHUB_REPO_URL>` with your own repository URL).
+> 
+> 5. Connect your DVC project to the Dagshub remote:
+>    ```bash
+>    dvc remote add -d dagshub <YOUR_DAGSHUB_REPO_URL>
+>    ```
+>    Replace `<YOUR_DAGSHUB_REPO_URL>` with the URL of your Dagshub repository (e.g., `https://dagshub.com/your_username/your_repo.dvc`).
+> 
+> 6. Push your dataset to Dagshub:
+>    ```bash
+>    dvc push
+>    ```
+> 
+> This will upload your dataset to Dagshub while keeping your project files in GitHub for version control. Dagshub will manage the dataset versioning and tracking.
+
+
 ### 📊 MLflow
 - **Used for managing the machine learning lifecycle.** MLflow is used for tracking experiments, packaging code into reproducible runs, and managing model deployment.
+
+> ⚡ **Note:** If you want to access the MLflow dashboard, run `mlflow ui` in the terminal, and the dashboard will appear at [http://127.0.0.1:5000/](http://127.0.0.1:5000/). In case of any failure, add the following line to `model_evaluation.py`:
+> mlflow.set_tracking_uri("http://127.0.0.1:5000")
 
 ### 🌐 Dagshub
 - **Used for managing and versioning data science projects.** Dagshub integrates DVC and Git to manage datasets, code, and models, helping teams collaborate efficiently on machine learning projects.
 
+> ⚡ **Note:** To create a repository on Dagshub and use DVC for versioning datasets, follow these steps:
+> 
+> 1. **Create a new repository on Dagshub:**
+>    - Visit [Dagshub](https://dagshub.com) and log in or create an account.
+>    - Click on the "Create New Repository" button.
+>    - Enter a repository name and description, and choose whether it will be public or private.
+>    - Click "Create Repository."
+> 
+> 2. **Set up DVC with your Dagshub repository:**
+>    - Once your repository is created, you'll be provided with a URL for the remote.
+>    - In your local project directory, link your DVC project to the Dagshub repository:
+>      ```bash
+>      dvc remote add -d dagshub <YOUR_DAGSHUB_REPO_URL>
+>      ```
+>      Replace `<YOUR_DAGSHUB_REPO_URL>` with the URL of your Dagshub repository (e.g., `https://dagshub.com/your_username/your_repo.dvc`).
+> 
+> 3. **Push the dataset to Dagshub:**
+>    - After initializing DVC and adding your dataset (as explained earlier), push your dataset to the Dagshub remote:
+>      ```bash
+>      dvc push
+>      ```
+> 
+> This setup allows you to manage both your code (via Git) and your datasets (via DVC) in a centralized location on Dagshub, ensuring versioning and easy collaboration.
+
+
 ### 🔄 Luigi
 - **Used for building complex pipelines.** Luigi helps automate the execution of workflows, ensuring reproducibility and scalability of tasks such as data preprocessing, model training, and evaluation.
+
+> ⚡ **Note:** If you want to access the Luigi dashboard, set `local_scheduler=False` in the `training_pipeline` and then run `luigid` in the terminal. The dashboard will appear at [http://localhost:8082/](http://localhost:8082/).
 
 <!-- --- -->
 
@@ -57,16 +121,20 @@ The dataset contains information like:
 ## Instructions to Run the Loan Approval Model App
 There are two ways to run the loan approval prediction app. Follow one of the methods below:
 
+### 💡 Recommendation:
+If your goal is just to get predictions, please use **Method 2 (Docker)** 🐳, which involves using the container and launching it. This method provides a more streamlined and efficient setup.
+
+
 ### 🖥️ Method 1: Git Clone & Run Locally
 1. Clone the Git repository:
 - First, clone the repository containing the code.
 ```bash
-git clone https://github.com/abhishekanand-02/Loan_Approval_Predictor.git
+git clone --branch luigui_mlflow https://git.impressicocrm.com/mlops/dev_mlops.git
 ```
 
 2. Navigate into the project directory:
 ```bash
-cd Loan_Prediction
+cd dev_mlops/
 ```
 3. Create and activate a virtual environment (optional but recommended):
 - If you don't have venv installed, you can install it using the following command:
@@ -162,7 +230,7 @@ While the current model uses the Random Forest Classifier to predict loan approv
 ---
 
 ## 👨‍💻 Developer:
-This project was developed by Abhishek Anand.
+This project was developed by **Abhishek Anand**.
 
 Feel free to reach out at bgsabhishekanand02@gmail.com if you have any questions or suggestions!
 
