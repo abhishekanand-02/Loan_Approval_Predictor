@@ -115,6 +115,17 @@ The dataset contains information like:
 
 > ⚡ **Note:** If you want to access the Luigi dashboard, set `local_scheduler=False` in the `training_pipeline` and then run `luigid` in the terminal. The dashboard will appear at [http://localhost:8082/](http://localhost:8082/).
 
+### 🌀 Airflow  
+- **Used for orchestrating and scheduling workflows.** It supports task dependencies, retries, and parallel execution, making it ideal for automating ETL processes, machine learning workflows, and more.
+
+> 🗒️ **Note:**  
+> In this project, we are using **Luigi** for the training pipeline, but an alternative is **Airflow**, which can also be used.  
+> To run Airflow, use the following commands in the terminal:
+>
+> ```bash
+> airflow scheduler
+> airflow webserver
+> ```
 <!-- --- -->
 
 
